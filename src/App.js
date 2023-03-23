@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import axios from "axios";
+
+const Endpoint = "http://localhost:8080/api/get";
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>react-src/src/App.js</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
+  const fetchFromDB = async () => {
+    try {
+      axios.get(Endpoint).then((res) => {
+        console.log(res.data)
+      })
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchFromDB();
+  }, []);
+  return (
+    <div className="App">
+      <p>Hello Wordpress react</p>
+    </div>
+  );
 }
 
 export default App;
