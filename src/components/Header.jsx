@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   contactBtn: {
-    backgroundImage: "linear-gradient(to right, #2CA4FB, #228FF6)",
+    backgroundImage: "linear-gradient(to right, #57b9ff, #228FF6)",
     padding: "15px 40px",
     borderRadius: 50,
     color: theme.palette.primary.white,

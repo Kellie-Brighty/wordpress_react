@@ -4,7 +4,7 @@ export const themes = createTheme({
   palette: {
     primary: {
       main: "#73F49D",
-      white: "#F9F9F9",
+      white: "#FFF",
     },
     secondary: {
       main: "#85878D",
@@ -16,6 +16,7 @@ export const themes = createTheme({
   },
   typography: {
     fontFamily: "Alegreya Sans",
+    caption: "Montserrat"
   },
 });
 
