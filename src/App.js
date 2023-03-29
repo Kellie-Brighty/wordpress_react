@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import axios from "axios";
+import Header from "./components/Header";
+import "./App.css";
+import Home from "./pages/Home";
 
 const Endpoint = "http://localhost:8080/api/get";
 
@@ -9,8 +10,8 @@ function App() {
   const fetchFromDB = async () => {
     try {
       axios.get(Endpoint).then((res) => {
-        console.log(res.data)
-      })
+        console.log(res.data);
+      });
     } catch (err) {
       console.log(err);
     }
@@ -19,9 +20,10 @@ function App() {
   useEffect(() => {
     fetchFromDB();
   }, []);
+
   return (
-    <div className="App">
-      <p>Hello Wordpress react</p>
+    <div>
+      <Home />
     </div>
   );
 }
