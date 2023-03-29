@@ -18,8 +18,8 @@
     "craeject": "react-scripts eject",
     "crastart": "react-scripts start",
     "cratest": "react-scripts test",
-    "build": "wptheme-scripts build",
-    "start": "wptheme-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "wpbuild": "wptheme-scripts wpbuild",
     "wpstart": "wptheme-scripts wpstart"
   },

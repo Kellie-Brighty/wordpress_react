@@ -4,7 +4,9 @@ const port = 8080;
 
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
-app.listen(port);
+app.listen(port, ()=>{
+  console.log(`running on port ${port}`)
+});
 
 // Middlewares
 const cors = require("cors");
@@ -15,17 +17,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "",
-  database: "wordpress_with_react",
+  password: "@password12",
+  database: "wordblog",
 });
 
 // routes
 
 app.get("/api/get", (req, res) => {
-  const sqlFetch = "Select * from wp_posts";
+  const sqlFetch = "SELECT y.name author_name, x.* FROM wordblog.blog_posts x, wordblog.authors y WHERE x.author_id = y.id";
   db.query(sqlFetch, (error, result) => {
-    console.log(result);
-    return res.status(200).json(result);
+    error?res.send(error):res.send(result);
   });
 });
 
