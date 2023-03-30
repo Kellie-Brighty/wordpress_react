@@ -15,9 +15,9 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "@password12",
+  host: "192.168.0.101",
+  user: "dbuser",
+  password: "mypassword",
   database: "wordblog",
 });
 
