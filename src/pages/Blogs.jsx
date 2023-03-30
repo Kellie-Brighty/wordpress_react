@@ -71,7 +71,7 @@ const Blogs = () => {
    
 
     return (
-        <div className="blogss">
+        <div className="blogs">
             <table >
                 <thead>
                     <tr>
